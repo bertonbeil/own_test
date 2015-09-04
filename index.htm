@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>КНст - 11</title>
+
+        <!-- Bootstrap -->
+<!--        <link href="css/bootstrap.css" rel="stylesheet">-->
+        <link rel="stylesheet" href="css/main.css">
+        <link href="css/jquery.fullPage.css" rel="stylesheet">
+        <link rel="stylesheet" href="plus.css">
+
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+        <!--[if IE]>
+<script type="text/javascript">
+var console = { log: function() {} };
+</script>
+<![endif]-->
+
+
+    </head>
+    <body>
+        <header>
+            <div class="header-top clearfix">
+                <h1 class="l-left"><a href="#firstSection">КНст - 11</a></h1>
+                <a class="l-right toggle-menu" href="#">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </a>
+            </div>
+
+            <nav class="hide ">
+                <ul id="menu ">
+                    <li data-menuanchor="firstSection">
+                        <a href="#firstSection" title="First Section">Link 1</a>
+                    </li>
+                    <li data-menuanchor="secondSection">
+                        <a href="#secondSection" title="Second Section">Розклад</a>
+                    </li>
+                    <li data-menuanchor="thirdSection">
+                        <a href="#thirdSection" title="Second Section">Link 3</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        
+        
+        <div id="fullpage">
+            <div class="section " id="section0" data-anchor="firstSection">
+                <div class="container">
+                        <div class="logo-politech"></div>
+                </div>
+                <div class="scroll-icon">
+                    <p>Вниз</p>
+                    <a href="#thirdSection/1" class="icon-up-open-big"></a>
+                </div>
+            </div>
+            <div class="section" id="section1" data-anchor="secondSection">
+
+                <div class="slide">
+                    <div class="intro">
+                        <h2>ПОНЕДІЛОК</h2>
+                        <p></p>            
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Країнська</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John</td>
+                                    <td>Doe</td>
+                                    <td>john@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>Mary</td>
+                                    <td>Moe</td>
+                                    <td>mary@example.com</td>
+                                </tr>
+                                <tr>
+                                    <td>July</td>
+                                    <td>Dooley</td>
+                                    <td>july@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="intro">
+                        <h1>YOUTUBE API</h1>
+                        <p></p>
+                        <div id="player"></div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="intro">
+                        <h1>Social API</h1>
+                        <p>SOON...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section2" data-anchor="thirdSection">
+                <div class="intro">
+                    <h1>FORMS</h1>
+                    <p>soon...</p>
+                </div>
+                <div class="scroll-icon">
+                    <a href="#firstSection/1" class="icon-up-open-big-up"></a>
+                    <p>Вгору</p>
+                </div>
+            </div>
+        </div>
+        <div id="ver">ver "pre-alpha" 0.1</div>
+        
+
+<!--        <scritp src="scroll.js"></scritp>-->
+                <script src="jquery.fullPage.js"></script>
+        
+        <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        <script src="vendors/jquery.slimscroll.js"></script>
+        <script type="text/javascript" src="jquery.fullPage.js"></script>
+
+
+        <script>
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: 's9Lnwa84EMo',
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            // 5. The API calls this function when the player's state changes.
+            //    The function indicates that when playing a video (state=1),
+            //    the player should play for six seconds and then stop.
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    setTimeout(stopVideo, 6000);
+                    done = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
+        
+        <script>
+            // variables
+            var $header_top = $('.header-top');
+            var $nav = $('nav');
+
+
+
+            // toggle menu 
+            $header_top.find('a').on('click', function() {
+                $(this).parent().toggleClass('open-menu');
+            });
+
+
+
+            // fullpage customization
+            $('#fullpage').fullpage({
+                sectionsColor: ['#B8AE9C', '#348899', '#F2AE72', '#5C832F', '#B8B89F'],
+                sectionSelector: '.vertical-scrolling',
+                slideSelector: '.horizontal-scrolling',
+                navigation: true,
+                slidesNavigation: false,
+                controlArrows: false,
+                anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
+                menu: '#menu',
+
+                afterLoad: function(anchorLink, index) {
+                    $header_top.css('background', 'rgba(0, 47, 77, .3)');
+                    $nav.css('background', 'rgba(0, 47, 77, .25)');
+                    if (index == 5) {
+                        $('#fp-nav').hide();
+                    }
+                },
+
+                onLeave: function(index, nextIndex, direction) {
+                    if(index == 5) {
+                        $('#fp-nav').show();
+                    }
+                },
+
+                afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
+                    if(anchorLink == 'fifthSection' && slideIndex == 1) {
+                        $.fn.fullpage.setAllowScrolling(false, 'up');
+                        $header_top.css('background', 'transparent');
+                        $nav.css('background', 'transparent');
+                        $(this).css('background', '#374140');
+                        $(this).find('h2').css('color', 'white');
+                        $(this).find('h3').css('color', 'white');
+                        $(this).find('p').css(
+                            {
+                                'color': '#DC3522',
+                                'opacity': 1,
+                                'transform': 'translateY(0)'
+                            }
+                        );
+                    }
+                },
+
+                onSlideLeave: function( anchorLink, index, slideIndex, direction) {
+                    if(anchorLink == 'fifthSection' && slideIndex == 1) {
+                        $.fn.fullpage.setAllowScrolling(true, 'up');
+                        $header_top.css('background', 'rgba(0, 47, 77, .3)');
+                        $nav.css('background', 'rgba(0, 47, 77, .25)');
+                    }
+                } 
+            }); 
+        </script>
+        
+        
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+                    anchors: ['firstSection', 'secondSection', 'thirdSection', '4thpage', 'lastPage'],
+                    menu: '#menu',
+                    scrollingSpeed: 800
+                });
+            });
+        </script>
+<!--
+        <script>
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    //Navigation
+                    menu: true,
+                    lockAnchors: false,
+                    anchors:['firstPage', 'secondPage', '3rdPage'],
+                    navigation: true,
+                    navigationPosition: 'right',
+                    navigationTooltips: ['firstSlide', 'secondSlide'],
+                    showActiveTooltip: false,
+                    slidesNavigation: true,
+                    slidesNavPosition: 'bottom',
+
+                    //Scrolling
+                    css3: true,
+                    scrollingSpeed: 1000,
+                    autoScrolling: true,
+                    fitToSection: false,
+                    fitToSectionDelay: 2000,
+                    scrollBar: false,
+                    easing: 'easeInOutCubic',
+                    easingcss3: 'ease',
+                    loopBottom: false,
+                    loopTop: false,
+                    loopHorizontal: true,
+                    continuousVertical: false,
+                    normalScrollElements: '#element1, .element2',
+                    scrollOverflow: false,
+                    touchSensitivity: 15,
+                    normalScrollElementTouchThreshold: 5,
+
+                    //Accessibility
+                    keyboardScrolling: true,
+                    animateAnchor: true,
+                    recordHistory: true,
+
+                    //Design
+                    controlArrows: false,
+                    verticalCentered: true,
+                    resize : false,
+                    sectionsColor : ['#ccc', '#fff'],
+                    paddingTop: '3em',
+                    paddingBottom: '10px',
+                    fixedElements: '#header, .footer',
+                    responsiveWidth: 0,
+                    responsiveHeight: 0,
+
+                    //Custom selectors
+                    sectionSelector: '.section',
+                    slideSelector: '.slide',
+
+                    //events
+                    onLeave: function(index, nextIndex, direction){},
+                    afterLoad: function(anchorLink, index){},
+                    afterRender: function(){},
+                    afterResize: function(){},
+                    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+                    onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+                });
+            });
+        </script>
+-->
+    </body>
+</html>
